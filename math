@@ -1,0 +1,11 @@
+import java.util.Scanner;
+
+class ans3{
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        float r=in.nextFloat();
+        float Pi=3.14159f;
+
+        System.out.println(4*Pi*(Math.pow(r,3))/3);
+    }
+}
