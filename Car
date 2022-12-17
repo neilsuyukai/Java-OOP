@@ -1,0 +1,75 @@
+import java.util.Scanner;
+class Vehicle{
+    private int vID;
+    private int doors;
+    private int pos=0;
+    private Title[] itsOwner=new Title[5];
+    public Vehicle(int v,int d){
+        vID=v;
+        doors=d;
+    }
+    public void addOwner(Title t) {itsOwner[pos++]=t;}
+    public int getVID(){return vID;}
+    public int getPos(){
+        return pos;
+    }
+    public void printVehicle(){
+        System.out.println(vID);
+        System.out.println(doors);
+    }
+}
+class Owner{
+    private String ID;
+    private String name;
+    private int pos=0;
+    private Title[]itsVehicle=new Title[10];
+    public Owner(String ID,String name){
+        this.ID=ID;
+        this.name=name;
+    }
+    public void addVehicle(Title t){itsVehicle [pos++]=t;}
+    public String getID(){return ID;}
+    public String getName(){return name;}
+    public int getPos(){return pos;}
+    public void printOwner(){
+        System.out.println(ID);
+        System.out.println(name);
+    }
+
+}
+class Title
+{
+    private String number;
+    public Vehicle myVehicle;
+    public Owner myOwner;
+    public Title(String number,Vehicle vehicle,Owner owner){
+        this.number=number;
+        myVehicle=vehicle;
+        myOwner=owner;
+        vehicle.addOwner(this);
+        owner.addVehicle(this);
+    }
+    public String getNumber(){return number;}
+
+}
+class ans4{
+    public static void main(String[]args){
+        Vehicle[]vehicles=new Vehicle[2];
+            vehicles[0]=new Vehicle(1,4);
+            vehicles[1]=new Vehicle(2,2);
+
+        Owner[]owners=new Owner[2];
+            owners[0]=new Owner("5","John");
+            owners[1]=new Owner("6","Mary");
+        Title[]titles=new Title[3];
+            titles[0]=new Title("400",vehicles[0],owners[0]);
+            titles[1]=new Title("200",vehicles[1],owners[0]);
+            titles[2]=new Title("600",vehicles[0],owners[1]);
+        Scanner sc=new Scanner(System.in);
+        int X=sc.nextInt();
+        if(X==1)
+            System.out.println(owners[0].getPos());
+        else
+            System.out.println(vehicles[0].getPos());
+    }
+}
