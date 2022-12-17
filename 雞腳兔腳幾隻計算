@@ -1,0 +1,16 @@
+import java.util.Scanner;
+ class chicken {
+    public static void main(String[] args){
+        Scanner in=new Scanner(System.in);
+        int leg=in.nextInt();
+        int rab=40, chi=0, n=0;
+        while(chi<=40){
+            if(4*rab+2*chi==leg) {
+                System.out.println(rab);
+            }
+            chi++;
+            rab--;
+        }
+    }
+
+}
