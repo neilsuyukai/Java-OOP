@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+class zoo {
+    public static void main(String[] args) {
+        System.out.println("high");
+        Scanner in=new Scanner(System.in);
+        int n=in.nextInt();
+        if(n<=120)
+        {
+            System.out.println("免費");
+        }
+        else if(n>=120&&n<=150)
+        {
+            System.out.println("半價");
+        }
+        else if(n>=150)
+        {
+            System.out.println("全票");
+        }
+    }
+}
