@@ -1,0 +1,24 @@
+class ans4 {
+    public static void main(String[] args) {
+        int [][]m1={{3, 3}, {4, 4}};
+        int [][]m2={{3, 5}, {6, 7}};
+        int a_row=m1.length;
+        int a_column=m1[0].length;
+        int b_row=m2.length;
+        int b_column=m2[0].length;
+        int [][]m3=new int [a_row][b_column];
+        int n=0;
+        for(int i=0;i<a_row;i++)
+        {
+            for(int j=0;j<b_column;j++)
+            {
+                for(int k=0;k<b_column;k++)
+                {
+                    m3[i][j]+=m1[i][k]+m2[k][j];
+                }
+            }
+        }
+        n=m3[0][0]*m3[1][1]+m3[0][1]*m3[1][0];
+        System.out.println(n);
+    }
+}
