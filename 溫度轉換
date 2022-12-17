@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+class ans1
+{
+
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        //Promt the user for input
+
+        //Compute a
+        System.out.println("請輸入攝氏溫度");
+        Double a = input.nextDouble();
+
+        //Compute b
+        double b = a * 9.0 / 5.0 + 32.0;
+
+        //Display results
+        System.out.println("攝氏溫度" + a + "相當於華氏溫度" + b);
+
+    }
+
+}
