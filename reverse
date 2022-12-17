@@ -1,0 +1,17 @@
+import java.util.*;
+class reverse{
+    public static void main(String[] args){
+        Integer[] a=new Integer[10];
+        for(int i=0;i<10;i++)
+        {
+            a[i]=2*i;
+        }
+        Collections.reverse(Arrays.asList(a));
+
+        Scanner sc=new Scanner(System.in);
+        int x=sc.nextInt();
+        sc.close();
+
+        System.out.println(a[x]);
+    }
+}
