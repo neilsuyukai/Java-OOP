@@ -1,0 +1,61 @@
+interface IArea {
+
+    final double PI = 3.1415926;
+
+    void area();
+}
+
+interface IShape extends IArea {
+
+    void perimeter();
+}
+class Circle implements IShape {
+    public double x;
+    public double y;
+    private double r;
+
+    public double getX() {
+        return x;
+    }
+    public double getY() {
+        return y;
+    }
+    public double getR() {
+        return r;
+    }
+    public Circle(double x, double y, double r) {
+        this.x = x;
+        this.y = y;
+        this.r = r;
+    }
+
+    public void area() {
+        System.out.println("圓面積: " + PI*r*r);
+    }
+
+    public void perimeter() {
+        System.out.println("圓周長: " + 2.0*PI*r);
+    }
+}
+
+ class ans1{
+
+    public static void main(String[] args) {
+
+        Circle c = new Circle(16.0, 15.0, 16.0);
+        Circle d = new Circle(10.0, 10.0, 10.0);
+        java.util.Scanner sc =
+                new java.util.Scanner(System.in);
+        int n;
+        n = sc.nextInt();
+        if(n==1){
+            System.out.print(c.getR()+d.getR());
+        }
+        else if(n==2){
+            System.out.print(c.getX()+d.getX());
+        }
+        else if(n==3){
+            System.out.print(c.getY()+d.getY());
+        }
+    }
+}
