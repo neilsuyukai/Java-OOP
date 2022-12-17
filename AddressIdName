@@ -1,0 +1,75 @@
+import java.util.*;
+interface IAddress
+{
+    String getAddress1();
+}
+class Person
+{
+    private int id;
+    private String name;
+    public Person(int i,String n)
+    {
+        id=i;
+        name=n;
+    }
+    public final int getID()
+    {
+        return id;
+    }
+    public final String getName()
+    {
+        return name;
+    }
+
+}
+class Member extends Person
+{
+    private int address;
+    public int memberNo;
+    public int age;
+
+    public Member(int i,String n,int m,int a,int ag)
+    {
+        super(i,n);
+        memberNo=m;
+        address=a;
+        age=ag;
+    }
+    public void memberInfo()
+    {
+
+    }
+    public int getAddress1()
+    {
+        return address;
+    }
+    public void getAddress()
+    {
+        System.out.println("此人地址是："+address);
+    }
+    public void getId()
+    {
+        System.out.println(getID());
+    }
+}
+class ans4{
+    public static void main(String[]args){
+        Scanner in=new Scanner(System.in);
+        int n=in.nextInt();
+        Member jack=new Member(100,"jack",200,300,20);
+        Member mary=new Member(100,"mary",220,320,22);
+
+        switch(n)
+        {
+            case 1:
+                mary.getAddress();
+                break;
+            case 2:
+                mary.getId();
+                break;
+            case 3:
+                jack.getAddress();
+                break;
+        }
+    }
+}
