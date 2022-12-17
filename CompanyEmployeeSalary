@@ -1,0 +1,78 @@
+import java.util.Scanner;
+class Company
+{
+    public String name;
+    public String address;
+    private int pos=0;
+
+    private Employee2[] itsEmployee=new Employee2[5];
+    public Company(String name,String address){
+        this.name=name;
+        this.address=address;
+    }
+    public void addEmployee(Employee2 e){itsEmployee[pos++]=e;}
+    public void printCompany(){
+        System.out.println(name);
+        System.out.println(address);
+    }
+}
+class Employee
+{
+    private int ID;
+
+    private String name;
+
+    private double salary;
+    public Employee(int ID,String name,double salary){
+        this.ID=ID;
+        this.name=name;
+        this.salary=salary;
+    }
+    public int getID(){return ID;}
+    public String getName(){return name;}
+    public double getSalary(){return salary;}
+}
+class Company2{
+    public String name;
+    public String address;
+    private int pos=0;
+    private Employee2[]itsEmployee=new Employee2[5];
+    public Company2(String name,String address){
+        this.name=name;
+        this.address=address;
+    }
+    public void addEmployee(Employee2 e){itsEmployee[pos++]=e;}
+    public void printCompany(){
+        System.out.println(name);
+        System.out.println(address);
+    }
+}
+class Employee2{
+    private int ID;
+    private String name;
+    private double salary;
+    public Employee2(int ID,String name,double salary){
+        this.ID=ID;
+        this.name=name;
+        this.salary=salary;
+    }
+    public int getID(){return ID;}
+    public String getName(){return name;}
+    public double getSalary(){return salary;}
+
+}
+
+
+ class ans2{
+    public static void main(String[]args){
+        Company2 company=new Company2("北積電","新竹");
+        Employee2[] employees=new Employee2[3];
+        employees[0]=new Employee2(2,"John",20000);
+        employees[1]=new Employee2(3,"Mary",30000);
+        employees[2]=new Employee2(4,"Cherry",100000);
+        for(Employee2 e:employees)company.addEmployee(e);
+        Scanner sc=new Scanner(System.in);
+        int X=sc.nextInt();
+        System.out.println(employees[X].getName());
+    }
+}
