@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+class price {
+    public static void main(String[] args) {
+        System.out.println("input number");
+        Scanner keyin = new Scanner(System.in);
+        int charge = keyin.nextInt();
+
+        if (charge > 2000){
+            int fee = (int)(charge*0.75);
+            System.out.println("num："+charge+",price "+fee);
+        }else if(charge >5000){
+            int fee = (int)(charge*0.65);
+            System.out.println("num："+charge+",price "+fee);
+        }else if(charge > 10000){
+            int fee = (int)(charge*0.55);
+            System.out.println("num："+charge+",price "+fee);
+        }
+    }
+}
