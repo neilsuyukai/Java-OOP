@@ -1,0 +1,45 @@
+abstract class Account {
+    public String accountid;
+    private double amount;
+    public double interest;
+
+    public abstract double calInterest();
+
+    public void setBalance(double a) { amount = a; }
+
+    public double getBalance() { return amount; }
+}
+
+class SavingAccount extends Account {
+    public boolean haveCard;
+
+    public SavingAccount(String id, double amount,
+                         double interest, boolean haveCard) {
+        accountid = id;
+        setBalance(amount);
+        this.interest = interest;
+        this.haveCard = haveCard;
+    }
+
+
+    public double calInterest() {
+        double amount = getBalance();
+        return amount*Math.pow((1+interest),10);
+
+    }
+}
+class TenYearAccount extends SavingAccount{
+    public TenYearAccount(String id, double amount, double interest, boolean haveCard) {
+        super(id, amount, interest, haveCard);
+    }
+}
+
+ class ans4 {
+    // 主程式
+    public static void main(String[] args) {
+        SavingAccount s1 = new TenYearAccount("002-10-222-345", 5000.00, 0.15, true);
+
+        System.out.print(s1.calInterest());
+
+    }
+}
