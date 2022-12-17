@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+class length {
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        double length=in.nextDouble();
+        int time=0;
+        while(length>=20)
+        {
+            length=length/2;
+            time=time+1;
+        }
+        System.out.println(time);
+    }
+}
